@@ -1,0 +1,69 @@
+#include<stdio.h>
+#include<stdlib.h>
+//Initalize base variables
+int main(){
+int *z,n,i,j,temp;
+char choice;
+//Prompts used to make a selection to sort array 
+printf("Press a or A for Ascending order\nPress d or D for Descending order\nEnter choice: ");
+scanf("%c",&choice);
+//prompts user for size of array 
+printf("Enter size of array:");
+scanf("%d",&n);
+
+//allocates space needed to store values into array 
+z=malloc(sizeof(int)*n);
+
+//prompts user to enter elements of the array 
+printf(" enter %d Elements:" ,n);
+for(i=0;i<n;i++){
+scanf("%d", &z[i]);
+}
+
+printf("sorted results\n");
+
+//If user selects ascending order, process is done to sort array in ascending order.
+if ((choice=='A')||(choice=='a')) {
+for(i=0;i<n-1;i++){
+for(j=0;j<n-1;j++){
+if(*(z+j)>*(z+j+1)){
+
+temp=*(z+j);
+*(z+j)=*(z+j+1);
+*(z+j+1)=temp;
+}
+}
+}
+printf("Ascending Order\n"); //outputs our sorted array 
+for(i=0;i<n;i++)
+{
+printf("%d\n",*(z+i));
+}
+
+}
+else if((choice=='D')||(choice=='d')){ //else if statement for users that select a descending order 
+//completes swap of variables in array to produce descending order 
+for(i=0;i<n-1;i++){
+for(j=0;j<n-1;j++){
+if(*(z+j)<*(z+j+1)){
+
+temp=*(z+j);
+*(z+j)=*(z+j+1);
+*(z+j+1)=temp;
+}
+}
+}
+printf("Descending Order\n"); //outputs completed descending order array
+for(i=0;i<n;i++)
+{
+printf("%d\n",*(z+i));
+}
+}
+Else{ //prompts user of invalid selection 
+printf("error wrong selection");
+
+
+}
+printf("\noutput complete");
+return 0;
+}

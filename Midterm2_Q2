@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<string.h>
+//define our function to sort strings
+void sort_alphabetic(char *arr[], char input){
+
+            int x,y; //initialize base variables
+
+             if(input == 'A' || input == 'a'){ //Determines if user selected Ascending order, then genertates sorted array 
+                for (x = 0; x < 7 ; x++){
+
+                for (y = x + 1; y < 8; y++){
+
+
+                    if (strcasecmp(arr[x], arr[y]) > 0) { //Swaps string placements in array after comparing between 2 strings 
+  
+                        char *temp = arr[x]; //temp variable used for swap
+                        arr[x] = arr[y];
+                        arr[y] = temp;
+
+
+                                }
+                }
+            }
+        }
+
+            else if(input == 'D' || input == 'd'){ //determines if user inputted descending order then generates descending sort.
+                for (x = 0; x < 7 ; x++){ //for loop to navigate array 
+
+                for (y = x + 1; y < 8; y++){
+
+                if (strcasecmp(arr[x], arr[y]) < 0) { //compares 2 strings and swaps position to produce descending order.
+
+                        char *temp = arr[x];
+                        arr[x] = arr[y];
+                        arr[y] = temp;
+
+                                }
+                }
+            }
+        }
+
+        else{
+                printf("\nWrong Input!"); //prompts user with error if character beside a or d is entered
+        }
+
+} //Defines our main function 
+int main(){
+
+   //Initialize our base array values and variables 
+        char *arr[8] = {"Systems", "Programming", "Deep", "Learning", "Internet", "Things", "Robotics",
+"Course"};
+
+            int x;
+ char user;
+
+        //prints array prior to sort function
+              printf("Array before Sort: \n");
+        for(x=0;x<8;x++){
+                printf("%s    ", arr[x]);
+        }
+        //prompts user for input and accpets A or D to control sort order
+        printf("\n\nEnter A/a for ascending order, D/d for descending order: ");
+        scanf("%c", &user);
+
+        sort_alphabetic(arr, user); //Calls our sort funtion on our initalized array 
+
+            printf("\n Sorted Array : \n");
+        for(x=0;x<8;x++){
+                printf("%s    ", arr[x]); //outputs our final array after completed sort.
+        }
+        return 0;
+
+}

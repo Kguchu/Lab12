@@ -1,0 +1,29 @@
+#include<stdio.h> 
+int main(){ 
+//initalize base variables 
+char c; 
+int count = 0; 
+//prompts user to enter password 
+printf("Enter a password : "); 
+do 
+{ 
+//records user input and updates count varable +1 
+c = getchar(); 
+++count; 
+} 
+//while loop to evalute # of chars in user input 
+while (c != '\n' && c != EOF); 
+count = count - 1; 
+int score = count - 10; 
+score = abs(score); 
+if(count==10){ 
+//returns message if password is valid 
+printf("The password is safe."); 
+}else{ 
+//Returns error message to user if PW is less than 10 characters 
+printf("Score= %d\n", -1*score*5); 
+printf("The password is unsafe! Please reset."); 
+} 
+} 
+
+--------------------------------------------------------

@@ -1,0 +1,58 @@
+#include<stdio.h>
+
+//Define numeric sort method 
+void sort_numeric(int num, double* arr, char choice)
+{
+//define base variables 
+int x, j;
+   double t;
+if(choice == 'a' || choice == 'A') 
+//Determines if user selected A , if so preforms sort for ascending order 
+{ for (x = 0; x < num; x++) {
+
+for (j = x + 1; j < num; j++) {
+
+if (*(arr + j) < *(arr + x)) {  
+t = (double)*(arr + x);
+*(arr + x) = *(arr + j);
+*(arr + j) = t;
+}}}
+
+//prints sort in ascending order
+printf("Ascending array:\n");    for ( x = 0; x < num; x++){
+   printf("%f\n ", *(arr + x));
+   }
+ }
+else if(choice == 'd' || choice == 'D'){for (x=0;x<num;x++){
+ //determines if user selected d and performs sort in descending order
+
+for (j = x + 1; j < num; j++) {
+
+if (*(arr + j) > *(arr + x)) {
+t = (double)*(arr + x);
+*(arr + x) = *(arr + j);
+*(arr + j) = t;
+}}}
+//prints array in descending order 
+printf("Desending array:\n"); 
+   for ( x = 0; x < num; x++){
+   printf("%f\n ", *(arr + x));
+   }   }
+//prompts user for wrong selection 
+   else{
+        printf("Invalid Try Again!\n");
+   }
+}
+//define main metho d
+int main(){ 
+//define base variables and array to sort
+int num = 11; 
+int i;
+char choice; double arr[] = { 10, 0.25, -2342, 12123, 3.145435, 6, 6, 5.999, -2, -5, -109.56 };
+
+//accept user input and call sort method 
+printf("Press a or A to sort Ascending order\nPress d or D to sort Descending order\nEnter A or D?: ");
+scanf("%c",&choice);
+sort_numeric(num,arr,choice);
+return 0;
+}

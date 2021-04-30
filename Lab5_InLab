@@ -1,0 +1,20 @@
+ Question 1) : What did you see in the output of step 3? 
+-bash: simple.sh: command not found 
+2. Question 2) : What did you see in the output of step 4? 
+-bash: ./simple.sh: Permission denied 
+3. Question 3): Attach a screenshot of the output in step 6. 
+4. Question 4): Describe the meaning of -n option in echo command. 
+It inhibits our echo command from always appending to a new line. 
+5. Question 5): Is "Simple Script" a comment? If not, what is the meaning of it or why we use it? 
+Yes it is a comment any line that begins with # after our initial first line will be a comment. 
+6. Question 6): Is "#!/bin/bash" a comment? If not, what is the meaning of it or why we use it in first line? 
+No, It is not a comment it is used to help the system determine which shell to use. In this example it is telling it to use a “bash” shell to interpret the script.
+7. Question 7) : How many directories you can find in the output? Note: the directories are separated by colon. 
+5 Directories 
+8. Question 8) : Can you find errors prompted in step 9 ? If not, please briefly describe why there is no need to put ./ before the file name. 
+No errors occurred, because we were able to add our directory to the $path variable thus eliminating the need for “./ “ before execution of our file. 
+9. Question 9: Can you find the current working directory . in the PATH variable? 
+NO, After we closed our terminal our temporary file $PATH was deleted thus removing our directory and returning us to our original PATH contents. 
+10. Question 10) : Can you find errors prompted in step 11 ? If yes, please explain why? 
+-bash: simple.sh: command not found 
+The error occurs because we did not use “./” before execution. Our temporary directory was deleted thus we would first have to reinstate it in order to execute our file as “simple.sh” rather than “./simple.sh”

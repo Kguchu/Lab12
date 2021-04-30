@@ -1,0 +1,58 @@
+#Adding shell 
+Text="phoneBook.txt" 
+echo "Contact Name:" 
+read Name 
+echo "Phone Number:" 
+read Numb 
+echo "Contact Address:" 
+read Addy 
+echo "enter values:" 
+echo "$Name;$Numb;$Addy " 
+echo "yes/no:" 
+read Test 
+if [ "$Test" == "yes" ] 
+then 
+echo "$Name;$Numb;$Addy">>Text 
+else 
+echo "$Name;$Numb;$Addy was not added to phonebook" 
+fi 
+exit 0 
+--------------------------
+//(Shell script to read file) 
+#!/bin/bash 
+text = "phonebook.txt" 
+echo "Contact Number: Name ; Number ; Address" 
+sort text.txt 
+n1 --numb-separator=": "$text |less
+exit 0 
+-------------------------
+//(script to delete numbers) 
+#!/bin/bash 
+Text ="Phonebook.txt" 
+echo -n " please select a # line to delete contact" read input 
+mv $Text NewPhonebook.txt 
+nl -- numb - seperator ":" NewPhoneBook.txt | grep -v $numb :| awk -F: '{Print $2}' 
+exit 0 
+--------------------------------
+//Complete phonebook code: 
+while [ $exit -ne 1 ] 
+do 
+echo "Select an option add, quit, view, exit" read answer 
+if [ "$answer" = "add" ] 
+then 
+./Add.sh 
+elif [ "$answer" = "view" ] 
+then 
+./view.sh 
+elif [ "$answer" = "delete" ] 
+then 
+./Delete.sh 
+elif [ "$answer" = "end" ] 
+then 
+exit=1 
+else
+echo "Invalid command" 
+fi 
+done 
+#Out from script 
+exit 0 

@@ -1,0 +1,8 @@
+Lab 2. In lab Assignment 
+Kimani Guchu 
+1. My current working directory is /home/kguchu1 
+2. When we initially list the contents of our directory nothing is returned because the contents are null. However we then create a new directory of csc3320, so when we list the contents again csc3320 is now present in the list 
+3. Pwd - should be typed to print current working directory 
+4. Mkdir lab2 - should be typed inorder to create a new “lab2” file 
+5. Cd lab2 - should be typed inorder to access the created “lab2” file 
+6. The > character means “do” at tells the program to create the txt file and we press ctrl -D to tell program conclude file

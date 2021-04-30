@@ -1,0 +1,5 @@
+#!/bin/bash 
+echo "input a number in days" 
+read input 
+find /home/kguchu1 -iname "*" -atime +$input -type f | zip compress -@ 
+exit 0 

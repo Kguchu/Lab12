@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Enter a command" 
+read cmd
+if grep -q $cmd mandatabase.txt:
+then
+grep $cmd mandatabase.txt;
+else
+echo "no such command"
+fi

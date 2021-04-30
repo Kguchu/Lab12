@@ -1,0 +1,5 @@
+#!/bin/bash 
+echo "please enter a word" 
+read cmd_in 
+grep -o -i "$cmd_in" myexamfile.txt | wc -l 
+exit 0 

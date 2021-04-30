@@ -1,0 +1,42 @@
+//Code A
+#include <stdio.h> 
+#include <stdlib.h> 
+int factorial(int n) 
+{ 
+int X; 
+if(n !=1) 
+{ 
+X = n*factorial(n-1);} 
+else 
+{ 
+X=1;} 
+return X; 
+} 
+int main() { 
+int z; 
+printf("Enter a positive number : "); 
+scanf("%d",&z); 
+printf("Factorial of %d : %d\n",z,factorial(z)); // call function return 0; 
+}
+
+-----------------------------
+//Code B
+
+#include <stdio.h> 
+int main() 
+{ 
+int input = 5373; 
+printf("Number given: %d\n", input); 
+int new = ((input) << 3) + (~input); 
+printf("New NUmber=: %d\n", new); 
+} 
+-------------------------------
+
+//Code C
+#!/bin/bash 
+gcc File3.c -o File3 
+./File3 
+gcc File4.c -o File4 
+./File4 
+exit 0
+

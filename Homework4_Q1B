@@ -1,0 +1,68 @@
+#include <stdio.h> 
+#include <string.h> 
+int main() 
+{ 
+//initalize base variable, array & point amount 
+char password[25]; 
+int i,j; 
+int point = 100,len; 
+int lower = 0,upper=0,num=0,connum = 0; 
+//promts user to enter password & records user input printf("Enter the password: "); 
+scanf("%s",password); 
+len = strlen(password); //evaluates length of password enterd 
+//for loop to evalute missing lowercase letters in password for( i=0;i<len;i++) 
+{ 
+if(password[i] >= 'a' && password[i] <= 'z') 
+{ 
+lower += 1; 
+}} 
+if(lower <= 0) 
+{ 
+point -= 20; //decrease points if not found 
+} 
+//For loop evaluates if Capital letter in password for( i = 0;i<len;i++) 
+{ 
+if(password[i] >= 'A' && password[i] <= 'Z') 
+{ 
+upper += 1; 
+} 
+} 
+if(upper < 2) 
+{ 
+point -= 20; //decrease points if not found 
+} 
+//For loop evaluates if number is in password 
+for( i = 0;i<len;i++) 
+{ 
+if(password[i] >= '0' && password[i] <= '9') 
+{ 
+num += 1; 
+} 
+} 
+if(num <= 0) 
+{ 
+point -= 20; //decrease points if not found 
+} 
+//for loop checks for consecutive charachters in password for( i=0;i<len;i++)
+{ 
+for(j = i+1;j<len;j++) 
+{ 
+if(password[j] - password[i] == 1) 
+{ 
+connum += 1; 
+}}} 
+if(connum >= 2) { 
+point -= 20; //decreases points if found. 
+} 
+//If/else statements used to evaluate if the password is Safe or Unsafe Prompts the user with the outcome if(point < 70) 
+{ 
+printf("Points: %d",point); 
+printf("\nYour password is UNSAFE. Try again"); 
+} 
+else 
+{ 
+printf("Points: %d",point); 
+printf("\nYour password is SAFE. Congrats!"); 
+} 
+return 0; 
+} 

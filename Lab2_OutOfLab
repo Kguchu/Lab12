@@ -53,7 +53,7 @@ Last 50 commands:
 96 rm Lab2_P2 
 97 rmdir Lab2_P2 
 98 rm -rf Lab2_P2 
-99 ls 
+99 ls
 100 cd public 
 101 ls 
 102 cat public 
